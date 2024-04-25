@@ -84,7 +84,7 @@ namespace Randomizer.SMZ3 {
         }
 
         public virtual bool CanFill(Item item, Progression items) {
-            return Config.Keysanity || !item.IsDungeonItem || IsRegionItem(item);
+            return Config.KeyShuffle == KeyShuffle.Keysanity || Config.Z3Keysanity || !item.IsDungeonItem || IsRegionItem(item);
         }
 
         public virtual bool CanEnter(Progression items) {

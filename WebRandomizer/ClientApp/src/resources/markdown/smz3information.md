@@ -146,8 +146,9 @@ This option decides how dungeon items such as keys are shuffled.
 
 * None - A Link to the Past dungeon items can only be placed inside the dungeon
   they belong to, and there are no changes to Super Metroid.
-* Keysanity
+* Z3 Keysanity
     * Maps, Small Keys and Big Keys can now be found anywhere in either game.
+* SM Keysanity
     * There are now new Keycard items for Super Metroid that unlocks new types of doors.
     * Three different levels of keycards exists:
       * Level 1 - Lets you open all the doors with a matching Level 1 marker
@@ -164,6 +165,8 @@ This option decides how dungeon items such as keys are shuffled.
       the bottom right of the in-game map screen in Super Metroid.
     * A Link to the Past Compasses have been removed from the item pool to make
       space for the Super Metroid Keycards.
+* Keysanity
+    * Both Z3 and SM Keysanity combined.
 
 ### Seed
 

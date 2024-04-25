@@ -86,7 +86,7 @@ namespace Randomizer.SMZ3.Regions.SuperMetroid.NorfairUpper {
                         items.CanAccessNorfairUpperPortal()
                     ) && items.Varia && items.Super && (
                         /* Cathedral */
-                        items.CanOpenRedDoors() && (Config.Keysanity ? items.CardNorfairL2 : items.Super) &&
+                        items.CanOpenRedDoors() && (Config.SMKeysanity ? items.CardNorfairL2 : items.Super) &&
                             (items.CanFly() || items.HiJump || items.SpeedBooster) ||
                         /* Frog Speedway */
                         items.SpeedBooster && (items.CardNorfairL2 || items.Wave /* Blue Gate */) && items.CanUsePowerBombs()
@@ -97,7 +97,7 @@ namespace Randomizer.SMZ3.Regions.SuperMetroid.NorfairUpper {
                     ) &&
                     items.CanHellRun() && (
                         /* Cathedral */
-                        items.CanOpenRedDoors() && (Config.Keysanity ? items.CardNorfairL2 : items.Super) && (
+                        items.CanOpenRedDoors() && (Config.SMKeysanity ? items.CardNorfairL2 : items.Super) && (
                             items.CanFly() || items.HiJump || items.SpeedBooster ||
                             items.CanSpringBallJump() || items.Varia && items.Ice
                         ) ||

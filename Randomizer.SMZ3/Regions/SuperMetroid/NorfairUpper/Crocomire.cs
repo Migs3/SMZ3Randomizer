@@ -42,7 +42,7 @@ namespace Randomizer.SMZ3.Regions.SuperMetroid.NorfairUpper {
         }
 
         bool CanAccessCrocomire(Progression items) {
-            return Config.Keysanity ? items.CardNorfairBoss : items.Super;
+            return Config.SMKeysanity ? items.CardNorfairBoss : items.Super;
         }
 
         public override bool CanEnter(Progression items) {
@@ -52,11 +52,11 @@ namespace Randomizer.SMZ3.Regions.SuperMetroid.NorfairUpper {
                         items.CanAccessNorfairUpperPortal()
                     ) && items.Varia && (
                         /* Ice Beam -> Croc Speedway */
-                        (Config.Keysanity ? items.CardNorfairL1 : items.Super) && items.CanUsePowerBombs() && items.SpeedBooster ||
+                        (Config.SMKeysanity ? items.CardNorfairL1 : items.Super) && items.CanUsePowerBombs() && items.SpeedBooster ||
                         /* Frog Speedway */
                         items.SpeedBooster && items.Wave ||
                         /* Cathedral -> through the floor or Vulcano */
-                        items.CanOpenRedDoors() && (Config.Keysanity ? items.CardNorfairL2 : items.Super) &&
+                        items.CanOpenRedDoors() && (Config.SMKeysanity ? items.CardNorfairL2 : items.Super) &&
                             (items.CanFly() || items.HiJump || items.SpeedBooster) &&
                             (items.CanPassBombPassages() || items.Gravity && items.Morph) && items.Wave
                     ) ||
@@ -68,13 +68,13 @@ namespace Randomizer.SMZ3.Regions.SuperMetroid.NorfairUpper {
                         items.CanAccessNorfairUpperPortal()
                     ) && (
                         /* Ice Beam -> Croc Speedway */
-                        (Config.Keysanity ? items.CardNorfairL1 : items.Super) && items.CanUsePowerBombs() &&
+                        (Config.SMKeysanity ? items.CardNorfairL1 : items.Super) && items.CanUsePowerBombs() &&
                             items.SpeedBooster && (items.HasEnergyReserves(3) || items.Varia) ||
                         /* Frog Speedway */
                         items.SpeedBooster && (items.HasEnergyReserves(2) || items.Varia) &&
                             (items.Missile || items.Super || items.Wave /* Blue Gate */) ||
                         /* Cathedral -> through the floor or Vulcano */
-                        items.CanHellRun() && items.CanOpenRedDoors() && (Config.Keysanity ? items.CardNorfairL2 : items.Super) &&
+                        items.CanHellRun() && items.CanOpenRedDoors() && (Config.SMKeysanity ? items.CardNorfairL2 : items.Super) &&
                             (items.CanFly() || items.HiJump || items.SpeedBooster || items.CanSpringBallJump() || items.Varia && items.Ice) &&
                             (items.CanPassBombPassages() || items.Varia && items.Morph) &&
                             (items.Missile || items.Super || items.Wave /* Blue Gate */)

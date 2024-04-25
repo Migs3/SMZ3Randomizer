@@ -25,7 +25,7 @@ namespace Randomizer.SMZ3.Regions.Zelda {
                     items => items.KeyTR >= 1),
                 new Location(this, 256+181, 0x1EA25, LocationType.Regular, "Turtle Rock - Big Key Chest",
                     items => items.KeyTR >=
-                        (!Config.Keysanity || GetLocation("Turtle Rock - Big Key Chest").ItemIs(BigKeyTR, World) ? 2 :
+                        (!Config.Z3Keysanity || GetLocation("Turtle Rock - Big Key Chest").ItemIs(BigKeyTR, World) ? 2 :
                             GetLocation("Turtle Rock - Big Key Chest").ItemIs(KeyTR, World) ? 3 : 4))
                     .AlwaysAllow((item, items) => item.Is(KeyTR, World) && items.KeyTR >= 3),
                 new Location(this, 256+182, 0x1EA19, LocationType.Regular, "Turtle Rock - Big Chest",

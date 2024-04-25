@@ -23,7 +23,9 @@ Filename parts legend:
   * Early location if \`e\`
 * \`K\`: Key shuffle
   * None if missing
-  * Keysanity if \`k\`
+  * Z3 only Keysanity if \`z\`
+  * SM only Keysanity if \`s\`
+  * Full Keysanity if \`k\`
 * \`G\`: Goal
   * Defeat Both if missing
   * Fast Ganon if \`f\`

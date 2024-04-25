@@ -14,10 +14,10 @@ namespace Randomizer.SMZ3.Tests.Logic {
 
         World world;
 
-        internal void Setup(SMLogic smLogic, bool keysanity = false) {
+        internal void Setup(SMLogic smLogic, KeyShuffle keyshuffle = KeyShuffle.None) {
             var config = new Config {
                 SMLogic = smLogic,
-                KeyShuffle = keysanity ? KeyShuffle.Keysanity : KeyShuffle.None,
+                KeyShuffle = keyshuffle,
             };
             world = new World(config, "", 0, "");
             /* Here we use the assumptions that single/multiple reward checks yield true if the rewards are missing */
@@ -72,7 +72,7 @@ namespace Randomizer.SMZ3.Tests.Logic {
         public class SMNormalKeysanityTests : LogicTests {
 
             [SetUp]
-            public void Setup() => Setup(SMLogic.Normal, keysanity: true);
+            public void Setup() => Setup(SMLogic.Normal, KeyShuffle.SMKeysanity);
 
             [TestCaseSource(nameof(Regions))]
             public void CanEnterRegion(string name, Case list)
@@ -91,7 +91,7 @@ namespace Randomizer.SMZ3.Tests.Logic {
         public class SMHardKeysanityTests : LogicTests {
 
             [SetUp]
-            public void Setup() => Setup(SMLogic.Hard, keysanity: true);
+            public void Setup() => Setup(SMLogic.Hard, KeyShuffle.SMKeysanity);
 
             [TestCaseSource(nameof(Regions))]
             public void CanEnterRegion(string name, Case list)

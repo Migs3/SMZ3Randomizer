@@ -59,7 +59,7 @@ namespace Randomizer.SMZ3.Regions.SuperMetroid {
                 Normal =>
                     items.Super && (
                         /* Over the Moat */
-                        (Config.Keysanity ? items.CardCrateriaL2 : items.CanUsePowerBombs()) && (
+                        (Config.SMKeysanity ? items.CardCrateriaL2 : items.CanUsePowerBombs()) && (
                             items.SpeedBooster || items.Grapple || items.SpaceJump ||
                             items.Gravity && (items.CanIbj() || items.HiJump)
                         ) ||
@@ -74,7 +74,7 @@ namespace Randomizer.SMZ3.Regions.SuperMetroid {
                 _ =>
                     items.Super && (
                         /* Over the Moat */
-                        (Config.Keysanity ? items.CardCrateriaL2 : items.CanUsePowerBombs()) ||
+                        (Config.SMKeysanity ? items.CardCrateriaL2 : items.CanUsePowerBombs()) ||
                         /* Through Maridia -> Forgotten Highway */
                         items.CanUsePowerBombs() && (
                             items.Gravity ||

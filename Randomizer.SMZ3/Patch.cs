@@ -90,7 +90,7 @@ namespace Randomizer.SMZ3 {
 
             WriteMedallions();
             WriteRewards();
-            WriteDungeonMusic(config.Keysanity);
+            WriteDungeonMusic(config.Z3Keysanity);
 
             WriteDiggingGameRng();
 
@@ -617,7 +617,7 @@ namespace Randomizer.SMZ3 {
             if (myWorld.Config.MultiWorld) {
                 patches.Add((Snes(0xF47000), UshortBytes(0x0001)));
             }
-            if (myWorld.Config.Keysanity) {
+            if (myWorld.Config.SMKeysanity) {
                 patches.Add((Snes(0xF47006), UshortBytes(0x0001)));
             }
         }
@@ -639,7 +639,7 @@ namespace Randomizer.SMZ3 {
         }
 
         void WriteZ3KeysanityFlags() {
-            if (myWorld.Config.Keysanity) {
+            if (myWorld.Config.Z3Keysanity) {
                 patches.Add((Snes(0x40003B), new byte[] { 1 })); // MapMode #$00 = Always On (default) - #$01 = Require Map Item
                 patches.Add((Snes(0x400045), new byte[] { 0x0f })); // display ----dcba a: Small Keys, b: Big Key, c: Map, d: Compass
                 patches.Add((Snes(0x40016A), new byte[] { 1 })); // FreeItemText: db #$01 ; #00 = Off (default) - #$01 = On
@@ -650,7 +650,7 @@ namespace Randomizer.SMZ3 {
             ushort plaquePlm = 0xd410;
             int plmTablePos = 0xf800;
 
-            if (myWorld.Config.Keysanity) {
+            if (myWorld.Config.SMKeysanity) {
                 var doorList = new List<ushort[]> {
                                 // RoomId  Door Facing                yyxx  Keycard Event Type                   Plaque type               yyxx, Address (if 0 a dynamic PLM is created)
                     // Crateria

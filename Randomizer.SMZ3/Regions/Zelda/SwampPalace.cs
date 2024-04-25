@@ -15,7 +15,7 @@ namespace Randomizer.SMZ3.Regions.Zelda {
 
             Locations = new List<Location> {
                 new Location(this, 256+135, 0x1EA9D, LocationType.Regular, "Swamp Palace - Entrance")
-                    .Allow((item, items) => Config.Keysanity || item.Is(KeySP, World)),
+                    .Allow((item, items) => Config.Z3Keysanity || item.Is(KeySP, World)),
                 new Location(this, 256+136, 0x1E986, LocationType.Regular, "Swamp Palace - Map Chest",
                     items => items.KeySP),
                 new Location(this, 256+137, 0x1E989, LocationType.Regular, "Swamp Palace - Big Chest",

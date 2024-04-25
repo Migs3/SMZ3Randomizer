@@ -14,7 +14,7 @@ namespace Randomizer.SMZ3 {
 
             foreach (var world in worlds) {
                 world.ForwardSearch = true;
-                if (!world.Config.Keysanity) {
+                if (!world.Config.SMKeysanity) {
                     items.AddRange(Item.CreateKeycards(world));
                 }
 
@@ -48,7 +48,7 @@ namespace Randomizer.SMZ3 {
                 }
 
                 foreach (var location in addedLocations) {
-                    if (location.Item.Progression || config.Keysanity && (location.Item.IsDungeonItem || location.Item.IsKeycard || location.Item.IsSmMap)) {
+                    if (location.Item.Progression ||  (config.Z3Keysanity && location.Item.IsDungeonItem) || (config.SMKeysanity && (location.Item.IsKeycard || location.Item.IsSmMap))) {
                         AddLocation(sphere, location, config.MultiWorld);
                     }
                 }

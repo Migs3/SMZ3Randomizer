@@ -154,7 +154,9 @@ export default function Permalink() {
                         <Row>
                             <Col md="3">Key Shuffle:</Col><Col> {{
                                 none: 'None',
-                                keysanity: 'Keysanity',
+                                z3keysanity: 'Z3 Keysanity',
+                                smkeysanity: 'SM Keysanity',
+                                keysanity: 'Full Keysanity',
                             }[settings.keyshuffle]
                             }</Col>
                         </Row>

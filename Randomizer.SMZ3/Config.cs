@@ -63,7 +63,11 @@ namespace Randomizer.SMZ3 {
     enum KeyShuffle {
         [Description("None")]
         None,
-        [Description("Keysanity")]
+        [Description("Z3 Keysanity")]
+        Z3Keysanity,
+        [Description("SM Keysanity")]
+        SMKeysanity,
+        [Description("Full Keysanity")]
         Keysanity
     }
 
@@ -145,6 +149,8 @@ namespace Randomizer.SMZ3 {
         public bool SingleWorld => GameMode == GameMode.Normal;
         public bool MultiWorld => GameMode == GameMode.Multiworld;
         public bool Keysanity => KeyShuffle != KeyShuffle.None;
+        public bool SMKeysanity => (KeyShuffle != KeyShuffle.None && KeyShuffle != KeyShuffle.Z3Keysanity);
+        public bool Z3Keysanity => (KeyShuffle != KeyShuffle.None && KeyShuffle != KeyShuffle.SMKeysanity);
 
     }
 

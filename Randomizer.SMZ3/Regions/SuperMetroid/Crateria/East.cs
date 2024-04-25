@@ -34,9 +34,9 @@ namespace Randomizer.SMZ3.Regions.SuperMetroid.Crateria {
             return Logic switch {
                 Normal =>
                     /* Ship -> Moat */
-                    (Config.Keysanity ? items.CardCrateriaL2 : items.CanUsePowerBombs()) && items.Super ||
+                    (Config.SMKeysanity ? items.CardCrateriaL2 : items.CanUsePowerBombs()) && items.Super ||
                     /* UN Portal -> Red Tower -> Moat */
-                    (Config.Keysanity ? items.CardCrateriaL2 : items.CanUsePowerBombs()) && items.CanAccessNorfairUpperPortal() &&
+                    (Config.SMKeysanity ? items.CardCrateriaL2 : items.CanUsePowerBombs()) && items.CanAccessNorfairUpperPortal() &&
                         (items.Ice || items.HiJump || items.SpaceJump) ||
                     /* Through Maridia From Portal */
                     items.CanAccessMaridiaPortal(World) && items.Gravity && items.Super && (
@@ -49,9 +49,9 @@ namespace Randomizer.SMZ3.Regions.SuperMetroid.Crateria {
                     items.CanUsePowerBombs() && items.Super && items.Gravity,
                 _ =>
                     /* Ship -> Moat */
-                    (Config.Keysanity ? items.CardCrateriaL2 : items.CanUsePowerBombs()) && items.Super ||
+                    (Config.SMKeysanity ? items.CardCrateriaL2 : items.CanUsePowerBombs()) && items.Super ||
                     /* UN Portal -> Red Tower -> Moat */
-                    (Config.Keysanity ? items.CardCrateriaL2 : items.CanUsePowerBombs()) && items.CanAccessNorfairUpperPortal() &&
+                    (Config.SMKeysanity ? items.CardCrateriaL2 : items.CanUsePowerBombs()) && items.CanAccessNorfairUpperPortal() &&
                         (items.Ice || items.HiJump || items.CanFly() || items.CanSpringBallJump()) ||
                     /* Through Maridia From Portal */
                     items.CanAccessMaridiaPortal(World) && (

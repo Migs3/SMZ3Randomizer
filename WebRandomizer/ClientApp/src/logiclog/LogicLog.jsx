@@ -51,7 +51,9 @@ export default function LogicLog() {
             <Col>
                 <Toggle prefix="Key Shuffle" value={keyShuffle} setValue={setKeyShuffle} options={[
                     { name: 'None', value: '' },
-                    { name: 'Keysanity', value: 'Ks' }
+                    { name: 'Z3 Keysanity', value: 'KSz' },
+                    { name: 'SM Keysanity', value: 'KSs' },
+                    { name: 'Full Keysanity', value: 'KSf' }
                 ]} />
             </Col>
         </Row>

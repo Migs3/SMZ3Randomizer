@@ -35,15 +35,23 @@ namespace Randomizer.SMZ3 {
                 var progression = Item.CreateProgressionPool(world);
 
                 InitialFillInOwnWorld(dungeon, progression, world);
+                var worldLocations = world.Locations.Empty().Shuffle(Rnd);
+                var keyCards = Item.CreateKeycards(world);
 
-                if (Config.Keysanity == false) {
-                    var worldLocations = world.Locations.Empty().Shuffle(Rnd);
-                    var keyCards = Item.CreateKeycards(world);
-                    AssumedFill(dungeon, progression.Concat(keyCards).ToList(), worldLocations, new[] { world });
-                    baseItems = baseItems.Concat(keyCards).ToList();
-                } else {
-                    progressionItems.AddRange(Item.CreateKeycards(world));
-                    progressionItems.AddRange(Item.CreateSmMaps(world));
+                switch (Config.KeyShuffle) {
+                    case KeyShuffle.None:
+                        AssumedFill(dungeon, progression.Concat(keyCards).ToList(), worldLocations, new[] { world });
+                        baseItems = baseItems.Concat(keyCards).ToList();
+                        break;
+                    case KeyShuffle.SMKeysanity:
+                        AssumedFill(dungeon, progression.Concat(keyCards).ToList(), worldLocations, new[] { world });
+                        break;
+                }
+
+                if (Config.SMKeysanity) {
+                    var smMaps = Item.CreateSmMaps(world);
+                    progressionItems.AddRange(smMaps);
+                    progressionItems.AddRange(keyCards);
                 }
 
                 progressionItems.AddRange(dungeon);
